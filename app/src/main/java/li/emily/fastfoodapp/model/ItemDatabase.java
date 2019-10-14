@@ -1,9 +1,20 @@
 package li.emily.fastfoodapp.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class ItemDatabase {
     private static final HashMap<Integer, Item> items = new HashMap<Integer,Item>();
+
+    public static ArrayList<Item> getItems() {
+        return new ArrayList<Item>((List) Arrays.asList(items.values().toArray()));
+    }
+
+    public static Item getItemByID(int id){
+        return items.get(id);
+    }
 
     static{
         items.put(1, new Item(1, 1234, "Hamburger", 2.00, "abc"));
