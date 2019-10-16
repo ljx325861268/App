@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import li.emily.fastfoodapp.R;
 import li.emily.fastfoodapp.model.Item;
 
-public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class ItemViewHolder extends RecyclerView.ViewHolder{
     public TextView name;
     public ImageView imageView;
-    public OnClickListener listener;
+
 
     public ItemViewHolder(View v){
         super(v);
@@ -25,15 +25,6 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     public void setItem(Context context, Item item){
         name.setText(item.getName());
         imageView.setImageResource(item.getImageID());
-    }
-
-    @Override
-    public void onClick(View view) {
-
-    }
-
-    public interface OnClickListener {
-        public void onItemClick(int position);
     }
 }
 
