@@ -4,23 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddToOrderActivity">
+    tools:context=".AddToOrderActivity"
+    android:background="@drawable/background2">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="496dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="96dp"
+            android:layout_height="158dp"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/id_ordering_image"
-                android:layout_width="93dp"
-                android:layout_height="wrap_content"
+                android:layout_width="136dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/bkstacker" />
 
@@ -29,50 +32,64 @@
                 android:layout_width="135dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Name" />
+                android:gravity="center"
+                android:text="Name"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="118dp"
+            android:layout_height="117dp"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/id_price"
-                android:layout_width="101dp"
+                android:id="@+id/textView"
+                android:layout_width="115dp"
                 android:layout_height="match_parent"
-                android:text="price" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="    $"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/id_price"
+                android:layout_width="86dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="price"
+                android:textSize="24sp" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="263dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="69dp"
                     android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/id_minus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="onClickMinus"
                         android:text="-" />
 
                     <EditText
                         android:id="@+id/id_quantity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="77dp"
+                        android:layout_height="69dp"
                         android:layout_weight="1"
                         android:ems="10"
+                        android:gravity="center"
                         android:inputType="number" />
 
                     <Button
                         android:id="@+id/id_plus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="53dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="onClickPlus"
                         android:text="+" />
@@ -83,6 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="onClickAdd"
+                    android:shadowColor="@color/colorPrimary"
                     android:text="Add" />
             </LinearLayout>
         </LinearLayout>
@@ -90,7 +108,8 @@
         <TextView
             android:id="@+id/id_description"
             android:layout_width="match_parent"
-            android:layout_height="147dp"
-            android:text="description" />
+            android:layout_height="230dp"
+            android:text="description"
+            android:textSize="18sp" />
     </LinearLayout>
 </RelativeLayout>
