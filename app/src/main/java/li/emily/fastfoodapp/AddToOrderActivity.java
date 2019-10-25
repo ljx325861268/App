@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import li.emily.fastfoodapp.model.Item;
 import li.emily.fastfoodapp.model.ItemDatabase;
+import li.emily.fastfoodapp.model.OrderDatabase;
 
 public class AddToOrderActivity extends AppCompatActivity {
 
@@ -22,6 +23,8 @@ public class AddToOrderActivity extends AppCompatActivity {
     TextView description;
     TextView price;
     EditText quantity;
+
+    Item currentItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +40,12 @@ public class AddToOrderActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int id = intent.getIntExtra("ID",0);
-        Item i = ItemDatabase.getItemByID(id);
+        currentItem = ItemDatabase.getItemByID(id);
 
-        image.setImageResource(i.getImageID());
-        name.setText(i.getName());
-        description.setText(i.getDescription());
-        price.setText(String.valueOf(i.getPrice()));
+        image.setImageResource(currentItem.getImageID());
+        name.setText(currentItem.getName());
+        description.setText(currentItem.getDescription());
+        price.setText(String.valueOf(currentItem.getPrice()));
         quantity.setText(String.valueOf(currentQuantity));
 
     }
@@ -60,10 +63,7 @@ public class AddToOrderActivity extends AppCompatActivity {
     }
 
     public void onClickAdd(View v){
-        String priceString = price.getText().toString();
-        double amount = currentQuantity * Double.valueOf(priceString);
-        ItemDatabase.addToPrice(amount);
-        System.out.println(ItemDatabase.getTotalPrice().toBigInteger());
+        OrderDatabase.addToOrder(currentItem, currentQuantity);
 
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);

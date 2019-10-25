@@ -23,6 +23,7 @@
         android:layout_height="68dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"
+        android:onClick="onOrderClick"
         android:text="View Order"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"

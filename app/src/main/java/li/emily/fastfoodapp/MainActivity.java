@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,11 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnNot
     public void onNoteClick(int position) {
         Intent intent = new Intent(getApplicationContext(), AddToOrderActivity.class);
         intent.putExtra("ID", position+1);
+        startActivity(intent);
+    }
+
+    public void onOrderClick(View v){
+        Intent intent = new Intent(getApplicationContext(),OrderList.class);
         startActivity(intent);
     }
 

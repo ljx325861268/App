@@ -7,6 +7,7 @@ public class Item {
     private String name;
     private double price;
     private String description;
+    private int quantity;
 
     public Item(int id, int imageID, String name, double price, String description) {
         this.id = id;

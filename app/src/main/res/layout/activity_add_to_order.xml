@@ -82,9 +82,10 @@
                         android:layout_width="77dp"
                         android:layout_height="69dp"
                         android:layout_weight="1"
+                        android:clickable="false"
+                        android:editable="false"
                         android:ems="10"
-                        android:gravity="center"
-                        android:inputType="number" />
+                        android:gravity="center" />
 
                     <Button
                         android:id="@+id/id_plus"

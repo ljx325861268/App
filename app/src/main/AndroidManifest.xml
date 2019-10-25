@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddToOrderActivity"/>
+        <activity android:name=".OrderList"/>
     </application>
 
 </manifest>
